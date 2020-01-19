@@ -34,7 +34,7 @@ class _WhirlyClockState extends State<WhirlyClock>
     with SingleTickerProviderStateMixin {
   // Animation Duration.
   final int _animationDuration = 3;
-  
+
   bool _heightFallacy;
 
   // Device parameter and screen config.
@@ -80,7 +80,6 @@ class _WhirlyClockState extends State<WhirlyClock>
       duration: Duration(seconds: _animationDuration),
       vsync: this,
     );
-    _initializer();
   }
 
   @override
@@ -95,7 +94,9 @@ class _WhirlyClockState extends State<WhirlyClock>
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
-    _initializer();
+    if (!_clockGreeter.isAnimating) {
+      _initializer();
+    }
   }
 
   @override
