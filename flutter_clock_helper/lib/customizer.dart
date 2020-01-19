@@ -178,8 +178,6 @@ class _ClockCustomizerState extends State<ClockCustomizer> {
     SystemChrome.setPreferredOrientations(<DeviceOrientation>[
       DeviceOrientation.landscapeLeft,
       DeviceOrientation.landscapeRight,
-      DeviceOrientation.portraitUp,
-      DeviceOrientation.portraitDown,
     ]);
     final clock = Center(
       child: AspectRatio(
